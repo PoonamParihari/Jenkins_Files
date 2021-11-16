@@ -1,6 +1,18 @@
-l_header="http://microservices.blablabla/v1/payload"
-git_repo_=test-files
+import os
+import sys
+import subprocess
+import string
+import random
 
+bashfile=''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
+bashfile='/tmp/'+bashfile+'.sh'
+
+f = open(bashfile, 'w')
+s = """#!/usr/bin/bash
+
+# def variables
+curl_header="http://microservices.blablabla/v1/payload"
+git_repo_=test-files
 
 # functions
 check_cygwin_packages() {
