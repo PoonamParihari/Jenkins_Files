@@ -1,3 +1,4 @@
+def mvnHome=
 pipeline{
   agent { label 'slave1 || slave2' }
   environment {
