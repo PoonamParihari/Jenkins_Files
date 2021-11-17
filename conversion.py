@@ -7,8 +7,8 @@ import random
 bashfile=''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
 bashfile='/tmp/'+bashfile+'.sh'
 
-f = open(bashfile, 'w')
-s = """#!/usr/bin/bash
+file_name = open(bashfile, 'w')
+script_name = """#!/usr/bin/bash
 
 # def variables
 curl_header="http://microservices.blablabla/v1/payload"
@@ -123,10 +123,10 @@ esac
 
 popd >/dev/null
 """
-f.write(s)
-f.close()
+file_name.write(script_name)
+file_name.close()
 os.chmod(bashfile, 0o755)
 bashcmd=bashfile
-for arg in sys.argv[1:]:
-bashcmd += ' '+arg
+#for arg in sys.argv[1:]:
+#bashcmd += ' '+arg
 subprocess.call(bashcmd, shell=True)
