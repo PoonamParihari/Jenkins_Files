@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ccr:request xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xsi:schemaLocation="http://www.forum-datenaustausch.ch/ccr careCreditRequest_450.xsd" language="de" modus="production" xmlns:ccr="http://www.forum-datenaustausch.ch/ccr">
+	<ccr:processing>
+		<!-- LASTEST-17: same GLNs as workaround -->
+		<ccr:transport from="7601000002291" to="7601000002291">
+			<ccr:via via="7612000002291" sequence_id="1"/>
+		</ccr:transport>
+	</ccr:processing>
+	<ccr:payload>
+		<ccr:credit request_timestamp="1624353880" request_date="2021-06-12T00:00:00" request_id="###UUID###"/>
+		<ccr:body>
+			<ccr:prolog>
+				<ccr:package name="NEXUS / HEIM" version="805"/>
+				<ccr:generator name="NEXUS / HEIM" version="805"/>
+			</ccr:prolog>
+			<ccr:biller ean_party="" zsr="Z834001">
+				<ccr:company>7601007117079
+					<ccr:companyname>Pflegezentrum Biesen</ccr:companyname>
+					<ccr:postal>
+						<ccr:street>Flurstrasse 10</ccr:street>
+						<ccr:zip statecode="ZG">6047</ccr:zip>
+						<ccr:city>ZUG</ccr:city>
+					</ccr:postal>
+				</ccr:company>
+			</ccr:biller>
+			<ccr:provider ean_party="7901007117079" zsr="V734001">
+				<ccr:company>
+					<ccr:companyname>Pflegezentrum Biesen</ccr:companyname>
+					<ccr:postal>
+						<ccr:street>Flurstrasse 10</ccr:street>
+						<ccr:zip statecode="ZG">6047</ccr:zip>
+						<ccr:city>ZUG</ccr:city>
+					</ccr:postal>
+				</ccr:company>
+			</ccr:provider>
+			<ccr:insurance ean_party="7601000002291">
+				<ccr:company>
+					<ccr:companyname>Bolt </ccr:companyname>
+					<ccr:subaddressing>Krankenversicherung</ccr:subaddressing>
+					<ccr:postal>
+						<ccr:street>Grabenstrasse 17</ccr:street>
+						<ccr:zip statecode="ZG">6041</ccr:zip>
+						<ccr:city>ZUG</ccr:city>
+					</ccr:postal>
+				</ccr:company>
+			</ccr:insurance>
+			<ccr:debitor ean_party="7201000002291">
+				<ccr:company>
+					<ccr:companyname>Bolt </ccr:companyname>
+					<ccr:subaddressing>Krankenversicherung</ccr:subaddressing>
+					<ccr:postal>
+						<ccr:street>Grabenstrasse 17</ccr:street>
+						<ccr:zip statecode="ZG">6041</ccr:zip>
+						<ccr:city>ZUG</ccr:city>
+					</ccr:postal>
+				</ccr:company>
+			</ccr:debitor>
+			<ccr:referrer ean_party="7601000256836" zsr="H907101">
+				<ccr:person>
+					<ccr:familyname> Ferier</ccr:familyname>
+					<ccr:givenname>Gabriel</ccr:givenname>
+					<ccr:postal>
+						<ccr:zip statecode="ZG">6041</ccr:zip>
+						<ccr:city>ZUG</ccr:city>
+					</ccr:postal>
+				</ccr:person>
+			</ccr:referrer>
+			<!-- Randomly generated ssn and name -->
+			<ccr:patient gender="female" birthdate="1951-06-19T00:00:00" ssn="7562007516630">
+				<ccr:person salutation="Frau">
+					<ccr:familyname>Pascal</ccr:familyname>
+					<ccr:givenname>Maria</ccr:givenname>
+					<ccr:postal>
+						<ccr:street>Flurstrasse 54</ccr:street>
+						<ccr:zip statecode="ZG">6041</ccr:zip>
+						<ccr:city>ZUG</ccr:city>
+					</ccr:postal>
+				</ccr:person>
+			</ccr:patient>
+			<ccr:planning_data ordinance_type="first" provider_number="5">
+				<!-- Dummy insured ID -->
+				<ccr:kvg insured_id="1234567-8"/>
+				<ccr:treatment date_begin="2021-06-12T00:00:00" date_end="2021-12-11T00:00:00" treatment_days="P183D" treatment_canton="ZG" treatment_type="stationary" treatment_reason="unknown"/>
+				<ccr:nursinghome_care planning_catalog="RAIRUG43_2012" care_demand_level="9" assessment_date="2021-06-12T00:00:00" accommodation_type="1"/>
+				<ccr:planning_records number="1">
+					<!-- LASTEST-17: service_id optional, but must be given -->
+					<ccr:planning_record record_id="1" service_id="1" catalog_type="RAI/RUG" catalog_code="PE1" catalog_name="RAI/RUG" quantity="1" base_unit="1" total_unit="1"/>
+				</ccr:planning_records>
+				<ccr:service_records number="7">
+					<ccr:service_record record_id="1" tariff_type="960" tariff_code="96009" tariff_name="RAI-NH Tarifstufe 9" quantity="19" unit="86.4" amount="1641.6"/>
+					<ccr:service_record record_id="2" tariff_type="960" tariff_code="96009" tariff_name="RAI-NH Tarifstufe 9" quantity="31" unit="86.4" amount="2678.4"/>
+					<ccr:service_record record_id="3" tariff_type="960" tariff_code="96009" tariff_name="RAI-NH Tarifstufe 9" quantity="31" unit="86.4" amount="2678.4"/>
+					<ccr:service_record record_id="4" tariff_type="960" tariff_code="96009" tariff_name="RAI-NH Tarifstufe 9" quantity="30" unit="86.4" amount="2592"/>
+					<ccr:service_record record_id="5" tariff_type="960" tariff_code="96009" tariff_name="RAI-NH Tarifstufe 9" quantity="31" unit="86.4" amount="2678.4"/>
+					<ccr:service_record record_id="6" tariff_type="960" tariff_code="96009" tariff_name="RAI-NH Tarifstufe 9" quantity="30" unit="86.4" amount="2592"/>
+					<ccr:service_record record_id="7" tariff_type="960" tariff_code="96009" tariff_name="RAI-NH Tarifstufe 9" quantity="11" unit="86.4" amount="950.39999999999986"/>
+				</ccr:service_records>
+			</ccr:planning_data>
+		</ccr:body>
+	</ccr:payload>
+</ccr:request>
